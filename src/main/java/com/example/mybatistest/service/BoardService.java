@@ -13,7 +13,7 @@ import com.example.mybatistest.mapper.CommentMapper;
 
 @Service
 @Transactional
-public class BoardService {
+public class BoardService implements IBoardService{
 	@Autowired BoardMapper boardMapper;
 	@Autowired CommentMapper commentMapper;
 	public List<Board> getAll(){

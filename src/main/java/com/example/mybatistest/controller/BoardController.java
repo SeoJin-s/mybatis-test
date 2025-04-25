@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.mybatistest.dto.Board;
 import com.example.mybatistest.service.BoardService;
+import com.example.mybatistest.service.IBoardService;
 
 @Controller
 public class BoardController {
-	@Autowired BoardService boardService;
-	
+	// @Autowired BoardService boardService;	// 클래스와 통신
+	@Autowired IBoardService boardService; // 인터페이스와 통신
 	@GetMapping("/boardList")
 	public String boardList(Model model) {
 		List<Board> list = boardService.getAll();
